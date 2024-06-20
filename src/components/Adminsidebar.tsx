@@ -1,10 +1,9 @@
 import { IconType } from "react-icons";
-import { RiDashboard2Fill, RiShoppingBag3Fill,RiCoupon3Fill } from "react-icons/ri";
-import { Link, useLocation, Location } from "react-router-dom";
+import { RiDashboard2Fill,RiShoppingBag3Fill,RiCoupon3Fill } from "react-icons/ri";
+import { Link, useLocation,Location } from "react-router-dom";
 import { AiFillFileText } from "react-icons/ai";
 import { IoIosPeople } from "react-icons/io";
 import {FaChartBar,FaChartPie,FaChartLine,FaStopwatch,FaGamepad} from 'react-icons/fa'
-
 
 const Adminsidebar = () => {
   const location = useLocation();
@@ -22,9 +21,6 @@ const Adminsidebar = () => {
 };
 
 export default Adminsidebar;
-
-
-
 
 interface Liprops {
   url: string;
@@ -119,7 +115,6 @@ const DivTwo = ({ location }: { location: Location }) => (
     </ul>
   </div>
 );
-
 
 const DivThree = ({ location }: { location: Location }) => (
   <div>
