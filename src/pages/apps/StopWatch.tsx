@@ -8,7 +8,7 @@ const formatTime = (timeInSeconds: number) => {
   const hoursinstring = hours.toString().padStart(2, "0");
   const minituesinstring = minitues.toString().padStart(2, "0");
   const secondsinstring = seconds.toString().padStart(2, "0");
-  return `${hoursinstring}:${minituesinstring}:${secondsinstring}`;
+  return `${hoursinstring} : ${minituesinstring} : ${secondsinstring}`;
 };
 
 const StopWatch = () => {

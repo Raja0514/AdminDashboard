@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useState, FormEvent, useEffect } from "react";
 import Adminsidebar from "../../components/Adminsidebar";
+
+const allLetters = "ASFSDFDSFSDAFSDAFSDAFSDAFASDFasedfdsafsadvcxvxcvdf";
+const allNumbers = "1234567890";
+const allSymbol = "#%%^%^*&*&*(&*^*%#";
 
 const Coupon = () => {
   const [size, setSize] = useState<number>(8);
@@ -10,9 +14,36 @@ const Coupon = () => {
   const [iscopied, setisCopied] = useState<boolean>(false);
   const [coupon, setCoupon] = useState<string>("");
 
-  const copytext=(coupon:string)=>{
+  const copytext = async (coupon: string) => {
+    await window.navigator.clipboard.writeText(coupon);
+    setisCopied(true);
+  };
 
-  }
+  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!includeNumber && !includeSymbols && !includeCharacters)
+      return alert("Please Select At Least One");
+
+    let result: string = prefix || "";
+
+    const looplength: number = size - result.length;
+
+    for (let i = 0; i < looplength; i++) {
+      let entireString: string = "";
+      if (includeCharacters) entireString += allLetters;
+      if (includeSymbols) entireString += allSymbol;
+      if (includeNumber) entireString += allNumbers;
+
+      const randomNum: number = ~~(Math.random() * entireString.length);
+      result += entireString[randomNum];
+    }
+
+    setCoupon(result);
+  };
+
+  useEffect(() => {
+    setisCopied(false);
+  }, [coupon]);
 
   return (
     <div className="admin-container">
@@ -20,7 +51,7 @@ const Coupon = () => {
       <main className="dashboard-app-container">
         <h1>Coupon</h1>
         <section>
-          <form className="coupon-form">
+          <form className="coupon-form" onSubmit={submitHandler}>
             <input
               type="text"
               placeholder="Text to include "
@@ -34,7 +65,7 @@ const Coupon = () => {
               value={size}
               onChange={(e) => setSize(Number(e.target.value))}
               min={8}
-              max={25}
+              max={15}
             />
 
             <fieldset>
@@ -48,7 +79,7 @@ const Coupon = () => {
               <input
                 type="checkbox"
                 checked={includeCharacters}
-                onChange={() =>setIncludeCharacter((prev) => !prev)}
+                onChange={() => setIncludeCharacter((prev) => !prev)}
               />
               <span>Characters</span>
               <input
@@ -61,16 +92,14 @@ const Coupon = () => {
             <button type="submit">Generate</button>
           </form>
 
-         {
-          coupon && <code>{coupon}
-          <span onClick={()=>copytext(coupon)}>{iscopied ? "Copied":"Copy"}</span>
-          </code>
-         }
-
-
-
-
-
+          {coupon && (
+            <code>
+              {coupon}
+              <span onClick={() => copytext(coupon)}>
+                {iscopied ? "Copied" : "Copy"}
+              </span>
+            </code>
+          )}
         </section>
       </main>
     </div>
