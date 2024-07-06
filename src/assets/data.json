@@ -1,19 +1,19 @@
 {
   "categeories": [
     {
-      "value": 80,
+      "value": 35,
       "heading": "laptops"
     },
     {
-      "value": 60,
+      "value": 75,
       "heading": "shoes"
     },
     {
-      "value": 70,
+      "value": 50,
       "heading": "cameras"
     },
     {
-      "value": 80,
+      "value": 65,
       "heading": "jeans"
     }
   ],
