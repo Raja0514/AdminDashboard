@@ -7,7 +7,7 @@ const NewProduct = () => {
   const [stock, setStock] = useState<number>();
   const [photo, setPhoto] = useState<string>("");
 
-  const changeImageHandler = (e: ChangeEvent<HTMLElement>) => {
+  const changeImageHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const file: File | undefined = e.target.files?.[0];
 
     const reader: FileReader = new FileReader();
