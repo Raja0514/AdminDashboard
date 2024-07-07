@@ -34,7 +34,7 @@ const TranscationManagement = () => {
   });
 
   const {
-    name,
+  
     address,
     city,
     country,
@@ -46,7 +46,7 @@ const TranscationManagement = () => {
     shippingCharge,
     tax,
     total,
-    _id,
+   
   } = order;
 
   const UpdateHandler=()=>{

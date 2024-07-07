@@ -93,7 +93,7 @@ const Dashboard = () => {
               data={[12, 19]}
               backgroundColor={["hsl(340,86%,56%)", "rgba(53,162,235,0.8)"]}
               cutout={90}
-              
+              offset={[10]}
             />
             <p>
               <BiMaleFemale />

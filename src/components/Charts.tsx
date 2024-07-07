@@ -118,7 +118,7 @@ export const DonutChart = ({
   data,
   backgroundColor,
   cutout,
-  legends,
+  legends=true,
   offset,
 }: DoughnutChartProps) => {
   const doughnutData: ChartData<"doughnut", number[], string> = {

@@ -15,7 +15,7 @@ const CustomerManagement = () => {
   const [stockupdate, setStockupdate] = useState<number>(stock);
   const [photoupdate, setPhotoupdate] = useState<string>(photo);
 
-  const changeImageHandler = (e: ChangeEvent<HTMLElement>) => {
+  const changeImageHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const file: File | undefined = e.target.files?.[0];
 
     const reader: FileReader = new FileReader();
