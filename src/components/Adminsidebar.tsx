@@ -1,22 +1,64 @@
 import { IconType } from "react-icons";
-import { RiDashboard2Fill,RiShoppingBag3Fill,RiCoupon3Fill } from "react-icons/ri";
-import { Link, useLocation,Location } from "react-router-dom";
+import {
+  RiDashboard2Fill,
+  RiShoppingBag3Fill,
+  RiCoupon3Fill,
+} from "react-icons/ri";
+import { Link, useLocation, Location } from "react-router-dom";
 import { AiFillFileText } from "react-icons/ai";
 import { IoIosPeople } from "react-icons/io";
-import {FaChartBar,FaChartPie,FaChartLine,FaStopwatch,FaGamepad} from 'react-icons/fa'
+import {
+  FaChartBar,
+  FaChartPie,
+  FaChartLine,
+  FaStopwatch,
+  FaGamepad,
+} from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { HiMenuAlt4 } from "react-icons/hi";
 
 const Adminsidebar = () => {
   const location = useLocation();
+  const [showModel, setShoowModel] = useState<boolean>(false);
+  const [phoneActive, setPhoneActive] = useState<boolean>(
+    window.innerWidth < 1100
+  );
+
+  const resizehandler=()=>{
+    setPhoneActive(window.innerWidth<1100);
+  }
+
+  useEffect(()=>{
+    window.addEventListener("resize",resizehandler)
+  },[])
 
   return (
-    <aside>
-      <h2>Logo</h2>
-      
+    <>
+      {phoneActive && (
+        <button id="hamburger" onClick={() => setShoowModel(true)}>
+          <HiMenuAlt4 />
+        </button>
+      )}
+      <aside
+        style={
+          phoneActive
+            ? {
+                width: "20rem",
+                height: "100vh",
+                position: "fixed",
+                top: 0,
+                left: showModel ? "0" : "-20rem",
+                transition: "all 0.5s",
+              }
+            : {}
+        }
+      >
+        <h2>Logo</h2>
         <Divone location={location} />
         <DivTwo location={location} />
-        <DivThree location={location}/>
-    
-    </aside>
+        <DivThree location={location} phoneactive={phoneActive} showmodel={setShoowModel} />
+      </aside>
+    </>
   );
 };
 
@@ -110,13 +152,19 @@ const DivTwo = ({ location }: { location: Location }) => (
         location={location}
         text="Line"
       />
-
-      
     </ul>
   </div>
 );
 
-const DivThree = ({ location }: { location: Location }) => (
+const DivThree = ({
+  location,
+  phoneactive,
+  showmodel
+}: {
+  location: Location;
+  phoneactive: boolean;
+  showmodel:React.Dispatch<React.SetStateAction<boolean>>
+}) => (
   <div>
     <h5>apps</h5>
 
@@ -141,10 +189,7 @@ const DivThree = ({ location }: { location: Location }) => (
         location={location}
         text="Toss"
       />
-
     </ul>
+    {phoneactive && <button id="close-sidebar" onClick={()=>{showmodel(false)}}>Close</button>}
   </div>
 );
-
-
-
