@@ -16,6 +16,7 @@ import {
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import {HiMenu} from "react-icons/hi";
+import { MdDashboard } from "react-icons/md";
 
 const Adminsidebar = () => {
   const location = useLocation();
@@ -53,7 +54,15 @@ const Adminsidebar = () => {
             : {}
         }
       >
-        <h2>Logo</h2>
+        <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+        <Link to="/"> 
+        
+        <MdDashboard style={{fontSize:"3rem", border:"5px dashed red",}} />
+       
+        </Link>
+ 
+        </div>
+              
         <Divone location={location} />
         <DivTwo location={location} />
         <DivThree location={location} phoneactive={phoneActive} showmodel={setShoowModel} />

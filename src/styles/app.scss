@@ -214,3 +214,19 @@ tbody{
     transform: rotateZ(360deg);
   }
 }
+
+.welcome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid;
+  background-color: darkslategray;
+  text-transform: uppercase;
+  color: white;
+  border: 2px solid grey;
+  >h1{
+    border: 2px solid white;
+    padding: 1rem;
+    @include heading;
+  }
+}

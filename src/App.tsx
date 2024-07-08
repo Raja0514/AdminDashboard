@@ -10,6 +10,7 @@ const Barchart = lazy(() => import("./pages/charts/Barchart"));
 const Piechart = lazy(() => import("./pages/charts/Piechart"));
 const Linechart = lazy(() => import("./pages/charts/Linechart"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Page = lazy(() => import("./pages/Mainpage"));
 
 const Product = lazy(() => import("./pages/Product"));
 const Customer = lazy(() => import("./pages/Customer"));
@@ -28,10 +29,9 @@ function App() {
     <Router>
       <Suspense fallback={<Loader />}>
         <Routes>
-
           {/* main section */}
-
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Page />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/product" element={<Product />} />
           <Route path="/admin/transcation" element={<Transcations />} />
           <Route path="/admin/customer" element={<Customer />} />
@@ -53,12 +53,10 @@ function App() {
 
           {/* Apps */}
 
-          <Route path="/admin/app/coupon" element={<Coupon/>} />
-          <Route path="/admin/app/stopwatch" element={<StopWatch/>} />
-          <Route path="/admin/app/toss" element={<Toss/>} />
-
+          <Route path="/admin/app/coupon" element={<Coupon />} />
+          <Route path="/admin/app/stopwatch" element={<StopWatch />} />
+          <Route path="/admin/app/toss" element={<Toss />} />
         </Routes>
-
       </Suspense>
     </Router>
   );
