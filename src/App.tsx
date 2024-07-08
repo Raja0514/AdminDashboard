@@ -31,7 +31,7 @@ function App() {
 
           {/* main section */}
 
-          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/admin/product" element={<Product />} />
           <Route path="/admin/transcation" element={<Transcations />} />
           <Route path="/admin/customer" element={<Customer />} />
