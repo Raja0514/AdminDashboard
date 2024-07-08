@@ -162,18 +162,21 @@ tbody{
   display: grid;
   place-items: center;
   @include square(3rem);
-  background-color:rgba(164, 195, 232, 0.1);
+  background-color:white;
   border: none;
   outline: none;
   cursor: pointer;
   color: rgba(44,104,255);
   position: fixed;
-  top: 1rem;
+  top: 0.5rem;
   left: 1rem;
   font-size: 2rem;
   border-radius: 50%;
   z-index: 9;
-  opacity: 1;
+ 
+ 
+   
+   
   
 
 }

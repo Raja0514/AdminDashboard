@@ -15,7 +15,7 @@ import {
   FaGamepad,
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { HiMenuAlt4 } from "react-icons/hi";
+import {HiMenu} from "react-icons/hi";
 
 const Adminsidebar = () => {
   const location = useLocation();
@@ -36,7 +36,7 @@ const Adminsidebar = () => {
     <>
       {phoneActive && (
         <button id="hamburger" onClick={() => setShoowModel(true)}>
-          <HiMenuAlt4 />
+         <HiMenu />
         </button>
       )}
       <aside

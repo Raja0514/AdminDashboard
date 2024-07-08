@@ -5,10 +5,16 @@
     height: 4rem;
     @include flex(row, unset);
     padding: 0 1rem;
+    position: relative;
+    left: 3rem;
+    right: 3rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.37);
     > input {
       margin-right: auto;
       @include inputStyle(100%, 1rem 0);
+      position: relative;
+      left: 3rem;
+      right: 3rem;
     }
 
     > svg {
