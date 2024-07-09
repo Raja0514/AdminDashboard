@@ -36,7 +36,7 @@ const StopWatch = () => {
     <div className="admin-container">
       <Adminsidebar />
       <main className="dashboard-app-container">
-        <h1>StopWatch</h1>
+        <h1 style={{textAlign:"center"}}>StopWatch</h1>
         <section>
           <div className="stopwatch">
             <h2>{formatTime(time)}</h2>

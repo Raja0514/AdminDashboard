@@ -49,7 +49,7 @@ const Coupon = () => {
     <div className="admin-container">
       <Adminsidebar />
       <main className="dashboard-app-container">
-        <h1>Coupon</h1>
+        <h1 style={{textAlign:"center"}}>Coupon</h1>
         <section>
           <form className="coupon-form" onSubmit={submitHandler}>
             <input

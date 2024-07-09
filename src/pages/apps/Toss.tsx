@@ -15,7 +15,7 @@ const flipcoin=()=>{
     <div className="admin-container">
         <Adminsidebar/>
         <main className="dashboard-app-container ">
-            <h1>Toss</h1>
+            <h1 style={{textAlign:"center"}}>Toss</h1>
             <section>
               <article className="tosscoin" onClick={flipcoin}
               
