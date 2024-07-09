@@ -5,7 +5,7 @@ const Mainpage = () => {
     <div className='admin-container'>
         <Adminsidebar />
         <main className="welcome">
-        <h1>dashboard</h1>
+        <h1>welcome to dashboard</h1>
         </main>
     </div>
   )
