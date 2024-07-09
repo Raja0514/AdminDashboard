@@ -36,6 +36,14 @@
     .admin-container{
         grid-template-columns: 1fr !important;
     }
+  .welcome{
+     >h5{
+    border: 2px solid white;
+    padding: 1rem;
+    @include heading;
+  }
+  }
+ 
 }
 
 @media screen and (width<=600px) {
