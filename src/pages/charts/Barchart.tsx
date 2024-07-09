@@ -22,7 +22,7 @@ const Barchart = () => {
     <div className="admin-container">
       <Adminsidebar />
       <main className="chart-container">
-        <h1 >BarChart</h1>
+        <h1 style={{textAlign:"center"}} >BarChart</h1>
         <section>
           <BarChart 
            data_1={[2998,2533,1644,2488,2566,2478,2878,2888,1888,2222,1111,1222]}

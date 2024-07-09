@@ -7,7 +7,7 @@ const Piechart = () => {
     <div className="admin-container">
       <Adminsidebar />
       <main className="chart-container">
-        <h1>PieChart & Dougnut Charts</h1>
+        <h1 style={{textAlign:"center"}}>PieChart & Dougnut Charts</h1>
         <section>
           <div>
             <PieChart

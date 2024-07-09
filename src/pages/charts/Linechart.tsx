@@ -9,7 +9,7 @@ const Linechart = () => {
     <div className="admin-container">
       <Adminsidebar/>
       <main className="chart-container">
-        <h1 >Line Chart</h1>
+        <h1 style={{textAlign:"center"}} >Line Chart</h1>
         <section>
           <LineChart
           data={[200,444,444,556,778,455,990,1444,256,447,1000,1200]}

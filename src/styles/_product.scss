@@ -3,6 +3,7 @@
   padding: 2rem;
   overflow: auto;
   @include square(100%);
+  text-align: center;
 }
 .create-product-button {
   position: fixed;
